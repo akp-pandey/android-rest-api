@@ -39,4 +39,10 @@ public class UserService {
             return false;
         }
     }
+
+    public LoginResponse deleteUserById(String id) {
+        userRepo.deleteById(id);
+        return new LoginResponse(HttpStatus.OK,"Your account has been deleted",null);
+        
+    }
 }

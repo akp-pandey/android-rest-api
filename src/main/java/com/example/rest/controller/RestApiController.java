@@ -63,9 +63,9 @@ public class RestApiController {
         return postService.addPostOfUser(postRequest);
     }
 
-    @GetMapping("/getPost")
-    public UserPostResponse getPost(@RequestBody UserPostRequest userPostRequest){
-        return postService.getAllPostOfUser(userPostRequest.getUserId());
+    @GetMapping("/getPost/{userId}")
+    public UserPostResponse getPost(@PathVariable String userId){
+        return postService.getAllPostOfUser(userId);
     }
 
     @PatchMapping("/like")
